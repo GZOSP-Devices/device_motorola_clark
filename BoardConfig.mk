@@ -159,6 +159,11 @@ TARGET_RIL_VARIANT := caf
 #BOARD_SEPOLICY_DIRS += \
 #    $(DEVICE_PATH)/sepolicy
 
+# TWRP Support - Optional
+ifeq ($(WITH_TWRP),true)
+-include device/motorola/clark/twrp.mk
+endif
+
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_clark
 TARGET_RECOVERY_DEVICE_MODULES := libinit_clark
